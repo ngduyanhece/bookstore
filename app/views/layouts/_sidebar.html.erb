@@ -1,0 +1,19 @@
+<% if params[:controller] == 'pages' %>
+<div class="well">
+	<h3>Location Info</h3>
+  <ul>
+    <li>The Bookstore</li>
+    <li>32 Tien Son 9, Hai Chau, Danang</li>
+    <li>Phone: +84924317570</li>
+    <li>Email: ngduyanhece@gmail.com</li>
+  </ul>
+</div>
+<% end %>
+<% if params[:controller] == 'books' && params[:action] == 'index' %>
+<div class="list-group">
+	<%= link_to "Ruby on Rails", "#", class: "list-group-item" %>
+	<%= link_to "Java", "#", class: "list-group-item" %>
+	<%= link_to "HTML5", "#", class: "list-group-item" %>
+	<%= link_to "Hobby", "#", class: "list-group-item" %>
+</div>
+<% end %>

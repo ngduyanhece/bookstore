@@ -9,11 +9,10 @@
   </ul>
 </div>
 <% end %>
-<% if params[:controller] == 'books' && params[:action] == 'index' %>
+<% if params[:controller] == 'books' && params[:action] == 'index' || params[:controller] == 'categories' && params[:action] == 'show'%>
 <div class="list-group">
-	<%= link_to "Ruby on Rails", "#", class: "list-group-item" %>
-	<%= link_to "Java", "#", class: "list-group-item" %>
-	<%= link_to "HTML5", "#", class: "list-group-item" %>
-	<%= link_to "Hobby", "#", class: "list-group-item" %>
+  <% @categories.each do |category| %>
+    <%= link_to category.name, category_path(category), class: "list-group-item" %>
+  <%  end %>
 </div>
 <% end %>

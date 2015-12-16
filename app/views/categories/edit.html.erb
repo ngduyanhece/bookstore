@@ -1,4 +1,4 @@
-<h2>Add New Category</h2>
+<h2>Edit Category</h2>
 <%= form_for @category do |f|%>
 	<% if @category.errors.any? %>
     <% @category.errors.full_messages.each do |msg| %>
@@ -12,4 +12,3 @@
   <%= f.submit "Submit", class: "btn btn-primary" %>
   <%= link_to "Cancel", categories_path, class: "btn btn-default"%>
 <% end %>
-

@@ -1,4 +1,4 @@
-<h2>Add New Author</h2>
+<h2>Edit Author</h2>
 <% if @author.errors.any? %>
   <% @author.errors.full_messages.each do |msg| %>
     <div class="alert alert-danger">
@@ -7,8 +7,8 @@
   <% end %>
 <% end %>
 <%= form_for @author do |f|%>
-	<div class="form-group">
-	 <%= f.label :first_name %>
+  <div class="form-group">
+   <%= f.label :first_name %>
    <%= f.text_field :first_name, class: "form-control" %>
   </div>
   <div class="form-group">

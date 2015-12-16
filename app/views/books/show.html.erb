@@ -1,22 +1,24 @@
 <div id="books-show">
-  <h2>Ruby on Rails</h2>
+  <h2><%= @book.title %></h2>
   <div id="books-show-left">
-    <%= image_tag 'covers/metaprogramming_ruby.jpg' %>
+    <%= image_tag @book.cover_path %>
   </div>
   <div id="book-show-right">
     <h3>Book info:</h3>
     <ul>
-      <li><strong>Category: </strong>Ruby on Rails</li>
-      <li><strong>Author: </strong>Paolo Perrotta</li>
-      <li><strong>Publisher: </strong>The Pragmatic Programmers</li>
-      <li><strong>Year: </strong>2010</li>
-      <li><strong>ISBN: </strong>978-1-93435-647-0</li>
-      <li><strong>Format: </strong>Paperback</li>
-      <li><strong>Page: </strong>282</li>
+      <li><strong>Category: </strong><%= @book.category.name if !@book.category.nil? %></li>
+      <li><strong>Author: </strong><%= @book.author.first_name if !@book.author.nil? %> <%= @book.author.last_name if !@book.author.nil? %></li>
+      <li><strong>Publisher: </strong><%=@book.publisher.name if !@book.publisher.nil?%></li>
+      <li><strong>Year: </strong><%= @book.year %></li>
+      <li><strong>ISBN: </strong><%= @book.isbn %></li>
+      <li><strong>Format: </strong><%= @book.format %></li>
+      <li><strong>Page: </strong><%= @book.pages %></li>
     </ul>
-    <%= link_to "Buy now for $5.47", "#", class: "btn btn-success", target: "_blank" %>
+    <%= link_to "Buy now for " + @book.price, "#", class: "btn btn-success", target: "_blank" %>
   </div>
   <div class="clearfix"></div>
   <h4>Excerpt</h4>
-  <p>In non ex vehicula, tincidunt nibh mattis, iaculis mauris. Donec est neque, mollis vel nibh non, consequat viverra ex. Praesent ac sem mauris. Nunc vulputate lectus id ipsum tincidunt porta. Praesent id varius enim. Proin ac feugiat dui, interdum hendrerit est. In vitae nibh faucibus, tempus lectus at, tincidunt enim. Suspendisse quis leo pretium, interdum ante id, commodo augue. Sed fringilla ac urna vel mattis. Etiam ut sapien a justo sodales ultricies sit amet quis turpis. Maecenas ac est quis ipsum mollis luctus ac et arcu. Aenean quis ornare est, sed tristique felis. Vestibulum auctor nisi nibh, et egestas eros ornare vitae. Vestibulum condimentum volutpat tellus in finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam tincidunt malesuada purus, vitae vehicula tellus varius vitae.</p>	
+  <p><%= @book.excerpt %></p>	
+  <h3>Admin Function</h3>
+  <%= link_to "Edit", edit_book_path(@book)%> | <%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Are you sure?"}%>
 </div>

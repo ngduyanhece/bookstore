@@ -27,6 +27,16 @@
             <li><%= link_to "New Publisher", new_publisher_path %></li>
           </ul>
         </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Manages<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Category", categories_path %></li>
+            <li><%= link_to "Author", authors_path %></li>
+            <li><%= link_to "Publisher", publishers_path %></li>
+          </ul>
+        </li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
